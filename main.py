@@ -1,11 +1,16 @@
 def get_book_text(filepath):
     with open(filepath) as f:
-        
-        return f.read()
-
+        words = f.read()
+        new_words = words.split()
+        counter = 0
+        for word in new_words:
+            #print(word, counter)
+            counter += 1
+    return counter
 
 def main ():
-    print(get_book_text("books/frankenstein.txt"))
+    num_words = get_book_text("books/frankenstein.txt")
+    print(f'Found {num_words} total words')
 
 
 
